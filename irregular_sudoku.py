@@ -3,6 +3,7 @@ import utils.irregular_sudoku_utils as utils
 import utils.create_puzzle as puzzle
 import utils.solve_puzzle as solver
 import utils.constants as consts
+import utils.write_utils as write
 import copy
 import os, sys
 import argparse
@@ -15,6 +16,12 @@ def generate_irregular_sudoku(regions_map):
         return grid
     else:
         return None
+    
+def printOrWrite(text, file=None):
+    if file:
+        file.write(text + "\n")
+    else:
+        print(text)
 
 def print_grid_with_borders(grid, regions, file=None):
     N = len(grid)
@@ -79,10 +86,8 @@ def print_grid_with_borders(grid, regions, file=None):
                 elif left or right:                 ch = '═'
                 else:                               ch = ' '
                 line += ch
-        if file:
-            file.write(line + "\n")
-        else:
-            print(line)
+
+        printOrWrite(line, file)
         grid_output.append(line)
     return grid_output
 
@@ -288,7 +293,7 @@ def generate_puzzle_solution(seed=None, min_clues=6, max_clues=8, output_file=No
             
             if verbose:
                 print(step_description)
-                print(explanations[i])  # Mostrar explicação detalhada
+                print(explanations[i]) 
             
             if current_step_grid[r][c] == 0:
                 current_step_grid[r][c] = num
@@ -336,72 +341,6 @@ def generate_puzzle_solution(seed=None, min_clues=6, max_clues=8, output_file=No
         sys.stdout = original_stdout
     
     return result
-
-
-def create_readme_content(featured_puzzle):
-    """Cria o conteúdo do README com base no puzzle em destaque"""
-    
-    readme_content = """# Sudoku Irregular 5x5 com Bordas
-
-Este projeto gera e resolve sudokus irregulares 5x5. O sudoku irregular é uma variante onde as regiões não são quadradas regulares, mas grupos irregulares de células conectadas.
-
-## Puzzle em Destaque
-
-Abaixo está um exemplo de puzzle gerado pelo programa, junto com sua solução passo a passo:
-
-### Sudoku Puzzle Initial:
-
-```
-"""
-    for line in featured_puzzle["puzzle_output"]:
-        readme_content += line + "\n"
-    
-    readme_content += """```
-
-### Mapa das Regiões:
-
-```
-"""
-    for row in featured_puzzle["regions"]:
-        readme_content += " ".join(map(str, row)) + "\n"
-    
-    readme_content += """```
-
-### Solução Passo a Passo:
-
-"""
-    
-    for i, step_desc in enumerate(featured_puzzle["steps_output"]):
-        readme_content += step_desc + "\n"
-    
-    if featured_puzzle["solved_completely"]:
-        readme_content += "\n### Resultado: Sudoku resolvido completamente usando técnicas básicas!"
-    else:
-        readme_content += "\n### Resultado: O Sudoku não pôde ser resolvido completamente apenas com técnicas básicas."
-    
-    readme_content += """
-
-## Como Executar
-
-Para gerar 10 puzzles diferentes e salvá-los na pasta 'solucoes':
-
-```
-python irregular_sudoku.py -m 10
-```
-
-Outras opções:
-- `-s` ou `--ShowSteps`: Mostra os passos para resolver o puzzle
-- `-c` ou `--CreatePuzzle`: Cria um puzzle a partir da solução completa
-- `-m N` ou `--MultiPuzzle N`: Gera N puzzles diferentes e salva na pasta 'solucoes'
-- `-f` ou `--Featured`: Seleciona um puzzle para ser destacado no README
-
-## Técnicas Implementadas
-
-- Naked Singles: Quando apenas um número é possível em uma célula
-- Hidden Singles: Quando um número só pode estar em uma posição dentro de uma região/linha/coluna
-"""
-    
-    return readme_content
 
 
 def main():
@@ -454,7 +393,7 @@ def main():
             
             featured["is_featured"] = True
             
-            readme_content = create_readme_content(featured)
+            readme_content = write.create_readme_content(featured)
             with open("README.md", 'w', encoding='utf-8') as readme_file:
                 readme_file.write(readme_content)
             
