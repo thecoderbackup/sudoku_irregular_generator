@@ -1,0 +1,40 @@
+name: Monthly Irregular Sudoku Generator
+
+on:
+  schedule:
+    - cron: '0 0 1 * *' 
+  workflow_dispatch:  # Permite execuções manuais
+
+jobs:
+  generate-and-commit:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt || echo "No requirements.txt found"
+        mkdir -p solucoes
+
+    - name: Generate puzzles and README
+      run: |
+        # Gera 10 puzzles e seleciona um para o README
+        python irregular_sudoku.py -m 10 -f
+
+    - name: Commit and push changes
+      env:
+        GIT_AUTHOR_NAME: GitHub Actions
+        GIT_AUTHOR_EMAIL: actions@github.com
+      run: |
+        git pull
+        git config --global user.name "$GIT_AUTHOR_NAME"
+        git config --global user.email "$GIT_AUTHOR_EMAIL"
+        git add solucoes/ README.md
+        git commit -m "🧩 Monthly update: Irregular Sudoku puzzles [$(date +'%d/%m/%Y')]"
+        git push
