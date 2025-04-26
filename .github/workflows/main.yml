@@ -24,7 +24,7 @@ jobs:
 
     - name: Generate puzzles and README
       run: |
-        # Gera 10 puzzles e seleciona um para o README
+        # Gera 20 puzzles e seleciona um para o README
         python irregular_sudoku.py -m 20 -f
 
     - name: Commit and push changes
