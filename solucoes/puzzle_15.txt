@@ -1,0 +1,363 @@
+Gerando Sudoku Irregular 5x5 com Bordas...
+Sudoku Gerado:
+╔═════════╗
+║1 4 3 2 5║
+╠═════╦═══╣
+║3 2 1║5 4║
+║ ╔═╗ ║   ║
+║5║3║4║1 2║
+╠═╝ ╠═╩═╗ ║
+║2 1║5 4║3║
+║   ║   ╚═╣
+║4 5║2 3 1║
+╚═══╩═════╝
+
+Mapa das Regiões Usadas (0-4):
+0 0 0 0 0
+3 3 3 2 2
+3 4 3 2 2
+4 4 1 1 2
+4 4 1 1 1
+
+Criando puzzle com 6-8 pistas...
+
+Sudoku Puzzle (6-8 pistas):
+╔═════════╗
+║X X X X X║
+╠═════╦═══╣
+║3 X X║5 X║
+║ ╔═╗ ║   ║
+║5║X║4║1 X║
+╠═╝ ╠═╩═╗ ║
+║X 1║X X║3║
+║   ║   ╚═╣
+║X X║X 3 X║
+╚═══╩═════╝
+
+Resolvendo passo a passo com técnicas básicas...
+╔═════════╗
+║X X X X X║
+╠═════╦═══╣
+║3 X X║5 X║
+║ ╔═╗ ║   ║
+║5║X║4║1 X║
+╠═╝ ╠═╩═╗ ║
+║X 1║X X║3║
+║   ║   ╚═╣
+║X X║X 3 X║
+╚═══╩═════╝
+-----------
+Passo 1: Colocar 2 em (1,1) - Técnica: Naked Single
+Naked Single 2 na célula (1,1) porque:
+  - Número 1 é bloqueado por: coluna nas células (3,1)
+  - Número 3 é bloqueado por: linha nas células (1,0); região nas células (1,0)
+  - Número 4 é bloqueado por: região nas células (2,2)
+  - Número 5 é bloqueado por: linha nas células (1,3); região nas células (2,0)
+Portanto, o único número possível é 2.
+╔═════════╗
+║X X X X X║
+╠═════╦═══╣
+║3 2 X║5 X║
+║ ╔═╗ ║   ║
+║5║X║4║1 X║
+╠═╝ ╠═╩═╗ ║
+║X 1║X X║3║
+║   ║   ╚═╣
+║X X║X 3 X║
+╚═══╩═════╝
+-----------
+Passo 2: Colocar 1 em (1,2) - Técnica: Naked Single
+Naked Single 1 na célula (1,2) porque:
+  - Número 2 é bloqueado por: linha nas células (1,1); região nas células (1,1)
+  - Número 3 é bloqueado por: linha nas células (1,0); região nas células (1,0)
+  - Número 4 é bloqueado por: coluna nas células (2,2); região nas células (2,2)
+  - Número 5 é bloqueado por: linha nas células (1,3); região nas células (2,0)
+Portanto, o único número possível é 1.
+╔═════════╗
+║X X X X X║
+╠═════╦═══╣
+║3 2 1║5 X║
+║ ╔═╗ ║   ║
+║5║X║4║1 X║
+╠═╝ ╠═╩═╗ ║
+║X 1║X X║3║
+║   ║   ╚═╣
+║X X║X 3 X║
+╚═══╩═════╝
+-----------
+Passo 3: Colocar 4 em (1,4) - Técnica: Naked Single
+Naked Single 4 na célula (1,4) porque:
+  - Número 1 é bloqueado por: linha nas células (1,2); região nas células (2,3)
+  - Número 2 é bloqueado por: linha nas células (1,1)
+  - Número 3 é bloqueado por: linha nas células (1,0); coluna nas células (3,4); região nas células (3,4)
+  - Número 5 é bloqueado por: linha nas células (1,3); região nas células (1,3)
+Portanto, o único número possível é 4.
+╔═════════╗
+║X X X X X║
+╠═════╦═══╣
+║3 2 1║5 4║
+║ ╔═╗ ║   ║
+║5║X║4║1 X║
+╠═╝ ╠═╩═╗ ║
+║X 1║X X║3║
+║   ║   ╚═╣
+║X X║X 3 X║
+╚═══╩═════╝
+-----------
+Passo 4: Colocar 3 em (2,1) - Técnica: Naked Single
+Naked Single 3 na célula (2,1) porque:
+  - Número 1 é bloqueado por: linha nas células (2,3); coluna nas células (3,1); região nas células (3,1)
+  - Número 2 é bloqueado por: coluna nas células (1,1)
+  - Número 4 é bloqueado por: linha nas células (2,2)
+  - Número 5 é bloqueado por: linha nas células (2,0)
+Portanto, o único número possível é 3.
+╔═════════╗
+║X X X X X║
+╠═════╦═══╣
+║3 2 1║5 4║
+║ ╔═╗ ║   ║
+║5║3║4║1 X║
+╠═╝ ╠═╩═╗ ║
+║X 1║X X║3║
+║   ║   ╚═╣
+║X X║X 3 X║
+╚═══╩═════╝
+-----------
+Passo 5: Colocar 2 em (2,4) - Técnica: Naked Single
+Naked Single 2 na célula (2,4) porque:
+  - Número 1 é bloqueado por: linha nas células (2,3); região nas células (2,3)
+  - Número 3 é bloqueado por: linha nas células (2,1); coluna nas células (3,4); região nas células (3,4)
+  - Número 4 é bloqueado por: linha nas células (2,2); coluna nas células (1,4); região nas células (1,4)
+  - Número 5 é bloqueado por: linha nas células (2,0); região nas células (1,3)
+Portanto, o único número possível é 2.
+╔═════════╗
+║X X X X X║
+╠═════╦═══╣
+║3 2 1║5 4║
+║ ╔═╗ ║   ║
+║5║3║4║1 2║
+╠═╝ ╠═╩═╗ ║
+║X 1║X X║3║
+║   ║   ╚═╣
+║X X║X 3 X║
+╚═══╩═════╝
+-----------
+Passo 6: Colocar 3 em (0,2) - Técnica: Hidden Single (Row 0)
+Hidden Single 3 na célula (0,2) porque é o único lugar na Row 0 onde esse número pode estar.
+╔═════════╗
+║X X 3 X X║
+╠═════╦═══╣
+║3 2 1║5 4║
+║ ╔═╗ ║   ║
+║5║3║4║1 2║
+╠═╝ ╠═╩═╗ ║
+║X 1║X X║3║
+║   ║   ╚═╣
+║X X║X 3 X║
+╚═══╩═════╝
+-----------
+Passo 7: Colocar 5 em (3,2) - Técnica: Hidden Single (Row 3)
+Hidden Single 5 na célula (3,2) porque é o único lugar na Row 3 onde esse número pode estar.
+╔═════════╗
+║X X 3 X X║
+╠═════╦═══╣
+║3 2 1║5 4║
+║ ╔═╗ ║   ║
+║5║3║4║1 2║
+╠═╝ ╠═╩═╗ ║
+║X 1║5 X║3║
+║   ║   ╚═╣
+║X X║X 3 X║
+╚═══╩═════╝
+-----------
+Passo 8: Colocar 2 em (4,2) - Técnica: Naked Single
+Naked Single 2 na célula (4,2) porque:
+  - Número 1 é bloqueado por: coluna nas células (1,2)
+  - Número 3 é bloqueado por: linha nas células (4,3); coluna nas células (0,2); região nas células (4,3)
+  - Número 4 é bloqueado por: coluna nas células (2,2)
+  - Número 5 é bloqueado por: coluna nas células (3,2); região nas células (3,2)
+Portanto, o único número possível é 2.
+╔═════════╗
+║X X 3 X X║
+╠═════╦═══╣
+║3 2 1║5 4║
+║ ╔═╗ ║   ║
+║5║3║4║1 2║
+╠═╝ ╠═╩═╗ ║
+║X 1║5 X║3║
+║   ║   ╚═╣
+║X X║2 3 X║
+╚═══╩═════╝
+-----------
+Passo 9: Colocar 4 em (3,3) - Técnica: Naked Single
+Naked Single 4 na célula (3,3) porque:
+  - Número 1 é bloqueado por: linha nas células (3,1); coluna nas células (2,3)
+  - Número 2 é bloqueado por: região nas células (4,2)
+  - Número 3 é bloqueado por: linha nas células (3,4); coluna nas células (4,3); região nas células (4,3)
+  - Número 5 é bloqueado por: linha nas células (3,2); coluna nas células (1,3); região nas células (3,2)
+Portanto, o único número possível é 4.
+╔═════════╗
+║X X 3 X X║
+╠═════╦═══╣
+║3 2 1║5 4║
+║ ╔═╗ ║   ║
+║5║3║4║1 2║
+╠═╝ ╠═╩═╗ ║
+║X 1║5 4║3║
+║   ║   ╚═╣
+║X X║2 3 X║
+╚═══╩═════╝
+-----------
+Passo 10: Colocar 2 em (0,3) - Técnica: Naked Single
+Naked Single 2 na célula (0,3) porque:
+  - Número 1 é bloqueado por: coluna nas células (2,3)
+  - Número 3 é bloqueado por: linha nas células (0,2); coluna nas células (4,3); região nas células (0,2)
+  - Número 4 é bloqueado por: coluna nas células (3,3)
+  - Número 5 é bloqueado por: coluna nas células (1,3)
+Portanto, o único número possível é 2.
+╔═════════╗
+║X X 3 2 X║
+╠═════╦═══╣
+║3 2 1║5 4║
+║ ╔═╗ ║   ║
+║5║3║4║1 2║
+╠═╝ ╠═╩═╗ ║
+║X 1║5 4║3║
+║   ║   ╚═╣
+║X X║2 3 X║
+╚═══╩═════╝
+-----------
+Passo 11: Colocar 2 em (3,0) - Técnica: Naked Single
+Naked Single 2 na célula (3,0) porque:
+  - Número 1 é bloqueado por: linha nas células (3,1); região nas células (3,1)
+  - Número 3 é bloqueado por: linha nas células (3,4); coluna nas células (1,0); região nas células (2,1)
+  - Número 4 é bloqueado por: linha nas células (3,3)
+  - Número 5 é bloqueado por: linha nas células (3,2); coluna nas células (2,0)
+Portanto, o único número possível é 2.
+╔═════════╗
+║X X 3 2 X║
+╠═════╦═══╣
+║3 2 1║5 4║
+║ ╔═╗ ║   ║
+║5║3║4║1 2║
+╠═╝ ╠═╩═╗ ║
+║2 1║5 4║3║
+║   ║   ╚═╣
+║X X║2 3 X║
+╚═══╩═════╝
+-----------
+Passo 12: Colocar 4 em (4,0) - Técnica: Naked Single
+Naked Single 4 na célula (4,0) porque:
+  - Número 1 é bloqueado por: região nas células (3,1)
+  - Número 2 é bloqueado por: linha nas células (4,2); coluna nas células (3,0); região nas células (3,0)
+  - Número 3 é bloqueado por: linha nas células (4,3); coluna nas células (1,0); região nas células (2,1)
+  - Número 5 é bloqueado por: coluna nas células (2,0)
+Portanto, o único número possível é 4.
+╔═════════╗
+║X X 3 2 X║
+╠═════╦═══╣
+║3 2 1║5 4║
+║ ╔═╗ ║   ║
+║5║3║4║1 2║
+╠═╝ ╠═╩═╗ ║
+║2 1║5 4║3║
+║   ║   ╚═╣
+║4 X║2 3 X║
+╚═══╩═════╝
+-----------
+Passo 13: Colocar 1 em (0,0) - Técnica: Naked Single
+Naked Single 1 na célula (0,0) porque:
+  - Número 2 é bloqueado por: linha nas células (0,3); coluna nas células (3,0); região nas células (0,3)
+  - Número 3 é bloqueado por: linha nas células (0,2); coluna nas células (1,0); região nas células (0,2)
+  - Número 4 é bloqueado por: coluna nas células (4,0)
+  - Número 5 é bloqueado por: coluna nas células (2,0)
+Portanto, o único número possível é 1.
+╔═════════╗
+║1 X 3 2 X║
+╠═════╦═══╣
+║3 2 1║5 4║
+║ ╔═╗ ║   ║
+║5║3║4║1 2║
+╠═╝ ╠═╩═╗ ║
+║2 1║5 4║3║
+║   ║   ╚═╣
+║4 X║2 3 X║
+╚═══╩═════╝
+-----------
+Passo 14: Colocar 5 em (0,4) - Técnica: Naked Single
+Naked Single 5 na célula (0,4) porque:
+  - Número 1 é bloqueado por: linha nas células (0,0); região nas células (0,0)
+  - Número 2 é bloqueado por: linha nas células (0,3); coluna nas células (2,4); região nas células (0,3)
+  - Número 3 é bloqueado por: linha nas células (0,2); coluna nas células (3,4); região nas células (0,2)
+  - Número 4 é bloqueado por: coluna nas células (1,4)
+Portanto, o único número possível é 5.
+╔═════════╗
+║1 X 3 2 5║
+╠═════╦═══╣
+║3 2 1║5 4║
+║ ╔═╗ ║   ║
+║5║3║4║1 2║
+╠═╝ ╠═╩═╗ ║
+║2 1║5 4║3║
+║   ║   ╚═╣
+║4 X║2 3 X║
+╚═══╩═════╝
+-----------
+Passo 15: Colocar 4 em (0,1) - Técnica: Naked Single
+Naked Single 4 na célula (0,1) porque:
+  - Número 1 é bloqueado por: linha nas células (0,0); coluna nas células (3,1); região nas células (0,0)
+  - Número 2 é bloqueado por: linha nas células (0,3); coluna nas células (1,1); região nas células (0,3)
+  - Número 3 é bloqueado por: linha nas células (0,2); coluna nas células (2,1); região nas células (0,2)
+  - Número 5 é bloqueado por: linha nas células (0,4); região nas células (0,4)
+Portanto, o único número possível é 4.
+╔═════════╗
+║1 4 3 2 5║
+╠═════╦═══╣
+║3 2 1║5 4║
+║ ╔═╗ ║   ║
+║5║3║4║1 2║
+╠═╝ ╠═╩═╗ ║
+║2 1║5 4║3║
+║   ║   ╚═╣
+║4 X║2 3 X║
+╚═══╩═════╝
+-----------
+Passo 16: Colocar 5 em (4,1) - Técnica: Naked Single
+Naked Single 5 na célula (4,1) porque:
+  - Número 1 é bloqueado por: coluna nas células (3,1); região nas células (3,1)
+  - Número 2 é bloqueado por: linha nas células (4,2); coluna nas células (1,1); região nas células (3,0)
+  - Número 3 é bloqueado por: linha nas células (4,3); coluna nas células (2,1); região nas células (2,1)
+  - Número 4 é bloqueado por: linha nas células (4,0); coluna nas células (0,1); região nas células (4,0)
+Portanto, o único número possível é 5.
+╔═════════╗
+║1 4 3 2 5║
+╠═════╦═══╣
+║3 2 1║5 4║
+║ ╔═╗ ║   ║
+║5║3║4║1 2║
+╠═╝ ╠═╩═╗ ║
+║2 1║5 4║3║
+║   ║   ╚═╣
+║4 5║2 3 X║
+╚═══╩═════╝
+-----------
+Passo 17: Colocar 1 em (4,4) - Técnica: Naked Single
+Naked Single 1 na célula (4,4) porque:
+  - Número 2 é bloqueado por: linha nas células (4,2); coluna nas células (2,4); região nas células (4,2)
+  - Número 3 é bloqueado por: linha nas células (4,3); coluna nas células (3,4); região nas células (4,3)
+  - Número 4 é bloqueado por: linha nas células (4,0); coluna nas células (1,4); região nas células (3,3)
+  - Número 5 é bloqueado por: linha nas células (4,1); coluna nas células (0,4); região nas células (3,2)
+Portanto, o único número possível é 1.
+╔═════════╗
+║1 4 3 2 5║
+╠═════╦═══╣
+║3 2 1║5 4║
+║ ╔═╗ ║   ║
+║5║3║4║1 2║
+╠═╝ ╠═╩═╗ ║
+║2 1║5 4║3║
+║   ║   ╚═╣
+║4 5║2 3 1║
+╚═══╩═════╝
+-----------
+Sudoku resolvido completamente usando técnicas básicas!
