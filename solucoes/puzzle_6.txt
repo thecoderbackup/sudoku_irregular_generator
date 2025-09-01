@@ -1,134 +1,78 @@
 Gerando Sudoku Irregular 5x5 com Bordas...
 Sudoku Gerado:
-╔═════╦═══╗
-║3 5 1║2 4║
-╠═╗   ║   ║
-║5║2 4║1 3║
-║ ╠═══╩═╗ ║
-║2║1 3 4║5║
-║ ╚═╗   ╠═╣
-║4 3║2 5║1║
-║ ╔═╩═══╝ ║
-║1║4 5 3 2║
-╚═╩═══════╝
+╔═╦═══╦═══╗
+║2║1 4║5 3║
+║ ║ ╔═╝   ║
+║5║3║1 4 2║
+║ ║ ╚═╦═══╣
+║4║5 2║3 1║
+║ ╠═══╣   ║
+║1║4 3║2 5║
+║ ║   ╚═╗ ║
+║3║2 5 1║4║
+╚═╩═════╩═╝
 
 Mapa das Regiões Usadas (0-4):
-1 1 1 3 3
-0 1 1 3 3
-0 2 2 2 3
-0 0 2 2 4
-0 4 4 4 4
+0 2 2 1 1
+0 2 1 1 1
+0 2 2 4 4
+0 3 3 4 4
+0 3 3 3 4
 
 Criando puzzle com 6-8 pistas...
 
 Sudoku Puzzle (6-8 pistas):
-╔═════╦═══╗
-║X X 1║X X║
-╠═╗   ║   ║
-║5║X X║1 X║
-║ ╠═══╩═╗ ║
-║X║X 3 X║X║
-║ ╚═╗   ╠═╣
-║X X║X 5║1║
-║ ╔═╩═══╝ ║
-║X║4 X X X║
-╚═╩═══════╝
+╔═╦═══╦═══╗
+║2║X X║X X║
+║ ║ ╔═╝   ║
+║X║X║X X X║
+║ ║ ╚═╦═══╣
+║X║5 X║3 X║
+║ ╠═══╣   ║
+║X║4 3║X X║
+║ ║   ╚═╗ ║
+║3║X X X║X║
+╚═╩═════╩═╝
 
 Resolvendo passo a passo com técnicas básicas...
-╔═════╦═══╗
-║X X 1║X X║
-╠═╗   ║   ║
-║5║X X║1 X║
-║ ╠═══╩═╗ ║
-║X║X 3 X║X║
-║ ╚═╗   ╠═╣
-║X X║X 5║1║
-║ ╔═╩═══╝ ║
-║X║4 X X X║
-╚═╩═══════╝
+╔═╦═══╦═══╗
+║2║X X║X X║
+║ ║ ╔═╝   ║
+║X║X║X X X║
+║ ║ ╚═╦═══╣
+║X║5 X║3 X║
+║ ╠═══╣   ║
+║X║4 3║X X║
+║ ║   ╚═╗ ║
+║3║X X X║X║
+╚═╩═════╩═╝
 -----------
-Passo 1: Colocar 5 em (2,4) - Técnica: Hidden Single (Row 2)
-Hidden Single 5 na célula (2,4) porque é o único lugar na Row 2 onde esse número pode estar.
-╔═════╦═══╗
-║X X 1║X X║
-╠═╗   ║   ║
-║5║X X║1 X║
-║ ╠═══╩═╗ ║
-║X║X 3 X║5║
-║ ╚═╗   ╠═╣
-║X X║X 5║1║
-║ ╔═╩═══╝ ║
-║X║4 X X X║
-╚═╩═══════╝
------------
-Passo 2: Colocar 5 em (0,1) - Técnica: Hidden Single (Row 0)
-Hidden Single 5 na célula (0,1) porque é o único lugar na Row 0 onde esse número pode estar.
-╔═════╦═══╗
-║X 5 1║X X║
-╠═╗   ║   ║
-║5║X X║1 X║
-║ ╠═══╩═╗ ║
-║X║X 3 X║5║
-║ ╚═╗   ╠═╣
-║X X║X 5║1║
-║ ╔═╩═══╝ ║
-║X║4 X X X║
-╚═╩═══════╝
------------
-Passo 3: Colocar 1 em (4,0) - Técnica: Hidden Single (Row 4)
-Hidden Single 1 na célula (4,0) porque é o único lugar na Row 4 onde esse número pode estar.
-╔═════╦═══╗
-║X 5 1║X X║
-╠═╗   ║   ║
-║5║X X║1 X║
-║ ╠═══╩═╗ ║
-║X║X 3 X║5║
-║ ╚═╗   ╠═╣
-║X X║X 5║1║
-║ ╔═╩═══╝ ║
-║1║4 X X X║
-╚═╩═══════╝
------------
-Passo 4: Colocar 1 em (2,1) - Técnica: Hidden Single (Row 2)
-Hidden Single 1 na célula (2,1) porque é o único lugar na Row 2 onde esse número pode estar.
-╔═════╦═══╗
-║X 5 1║X X║
-╠═╗   ║   ║
-║5║X X║1 X║
-║ ╠═══╩═╗ ║
-║X║1 3 X║5║
-║ ╚═╗   ╠═╣
-║X X║X 5║1║
-║ ╔═╩═══╝ ║
-║1║4 X X X║
-╚═╩═══════╝
------------
-Passo 5: Colocar 5 em (4,2) - Técnica: Hidden Single (Row 4)
-Hidden Single 5 na célula (4,2) porque é o único lugar na Row 4 onde esse número pode estar.
-╔═════╦═══╗
-║X 5 1║X X║
-╠═╗   ║   ║
-║5║X X║1 X║
-║ ╠═══╩═╗ ║
-║X║1 3 X║5║
-║ ╚═╗   ╠═╣
-║X X║X 5║1║
-║ ╔═╩═══╝ ║
-║1║4 5 X X║
-╚═╩═══════╝
+Passo 1: Colocar 4 em (4,4) - Técnica: Hidden Single (Row 4)
+Hidden Single 4 na célula (4,4) porque é o único lugar na Row 4 onde esse número pode estar.
+╔═╦═══╦═══╗
+║2║X X║X X║
+║ ║ ╔═╝   ║
+║X║X║X X X║
+║ ║ ╚═╦═══╣
+║X║5 X║3 X║
+║ ╠═══╣   ║
+║X║4 3║X X║
+║ ║   ╚═╗ ║
+║3║X X X║4║
+╚═╩═════╩═╝
 -----------
 O Sudoku não pôde ser resolvido completamente apenas com Singles (Naked/Hidden).
 Técnicas mais avançadas ou backtracking são necessárias.
 
 Estado final alcançado com técnicas básicas:
-╔═════╦═══╗
-║X 5 1║X X║
-╠═╗   ║   ║
-║5║X X║1 X║
-║ ╠═══╩═╗ ║
-║X║1 3 X║5║
-║ ╚═╗   ╠═╣
-║X X║X 5║1║
-║ ╔═╩═══╝ ║
-║1║4 5 X X║
-╚═╩═══════╝
+╔═╦═══╦═══╗
+║2║X X║X X║
+║ ║ ╔═╝   ║
+║X║X║X X X║
+║ ║ ╚═╦═══╣
+║X║5 X║3 X║
+║ ╠═══╣   ║
+║X║4 3║X X║
+║ ║   ╚═╗ ║
+║3║X X X║4║
+╚═╩═════╩═╝
